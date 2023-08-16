@@ -1,0 +1,48 @@
+
+
+
+
+
+08-14-2023 CLI
+CLI: Command Line Interface
+GUI: Graphical User Interface
+
+MAC -> Terminal
+Windows -> cmd prompt
+
+Computer = machine = workspace = PC = laptop = local
+
+directory = folder = location = repository
+
+MAC:
+
+pwd -> where I am = current folder/path/location
+ls -> list of files in current path
+cd -> {directoryName} -> navigate to specified directory
+clear -> clears the terminal
+mkdir {directoryName}  -> creates a new directory/folder with specified directoryName
+rmdir {directoryName} -> removes the specified directory/folder if its empty. It Will not remove non-empty directory
+cd .. moves one stoep back
+cd ~  moves to home directory
+cd /  moves to root directory
+rm -rf {directoryName}  -> removes the non-empty directory
+touch {fileName} -> creates fileName
+echo 
+
+
+Note: If you have your folder name with multiple words use double quotes for the name of the folder when you use rmdir or mkdir. Otherwise it will create 3 different folders
+
+
+
+Note: When you create a file starts with period (.) that means it is a hidden file.
+how to reveal hidden files?
+MAC-GUI : Command shift . to reveal it 
+MAC-CLI: ls -a 
+
+
+ 
+
+
+
+
+

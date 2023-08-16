@@ -1,0 +1,88 @@
+Recap:
+Computer: Machine -> input, process, output
+            Software + Hardware 
+        
+Binary Code: computer language that consists of of ones and zeros
+
+
+Programming Languages: Javascript, Java, C, C++, Go, c#, etc...
+Source Code: it is the code that is written with any programming language 
+    Console.log("Hello world!"); //Coding statement 
+
+
+Comments:
+    // single line comment
+
+    /* 
+    A multi line comment 
+    is written like this 
+    */
+
+How to duplict the code:
+mac: option+ shift + down (or up)
+windows: alt +shift+ down (or up)
+
+Javascript vs other programming lanaguages:
+Interpret: JavaScript: more flexible, less rules
+Compiled: Java, c#, TypeScript -> more rules and lots of exceptions (~errors)
+
+"Yuliia" (2, 4) -> li
+"Yuiila" (4, 2) -> li 
+
+
+Visual studio code: this is a code editor commonly used for JS
+Intellij IDEA: This is mostly for java and Koltin
+
+These code editors are known as IDE (Integrated development environment)
+
+
+
+
+
+
+Escape Sequences: are special characters or combinations of characters that are used to represent certain characters 
+that have special meaning or cannot be typed directly. Here are some commnonly used escape sequences in JavaScript:
+\' Represents a single quote.
+\" Represents a double quote.
+\\ Represents a backslash.
+\n Represents a new line.
+\t Represents a tab.
+
+Varoables - Declaration vs assignment vs initialization
+
+JavaScript uses the keywords var, let and const for variables. 
+(Interview Question: what is the difference between var, let, and const?)
+
+When to use var?
+var keyword is used in all JavaScript code from 1995 to 2015.
+let and const keywords were added to JavaScript in 2015.
+If you want your code to run in older browsers, you must use var.
+
+When to use const?
+const is used if you will not need to change your variable value.
+const variables have final values which cannot be changed.
+
+When to use let?
+Variables defined with let cannot be updated-reassigned with a new value
+let name; // declaration - reserve memory for the name 
+name = "John"; //assignment
+
+let age = 25; // initialization (storing data in variable)
+= assignment operator
+
+
++ operator:
+When used between strings = concatentation 
+Example: "hello" + "abc" -> helloabc
+        "123" + "12"  -> 12312
+
+when used between numbers= addition 
+ Example:
+ 12 + 2 -> 4
+
+ when used between strings and numbers = concatentation
+Example: "John" + 45 -> John45
+
+when used between numbers and strings = concatentation
+Example: 4 + "abc" -> 4abc
+

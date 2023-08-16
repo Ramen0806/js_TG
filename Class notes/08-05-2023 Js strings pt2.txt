@@ -1,0 +1,93 @@
+
+
+08-05-2023
+
+ReCap:
+
+String: it is one the data types (primitive-object)
+
+let name1 = "John"; //primitive
+let name2 = new String("John"); //object
+
+name1 == name2 //true
+name1 === name2 //false
+
+name1 !== name2 //false
+name1 !=== name2 //true
+
+-Anything in double or single quotes known strings
+-A sequence of characters (empty, one or more characters)
+""," ", "1","Hello", "123", etc...
+
+
+Template literals - string Templates
+-backtickS (ES6)
+-it allows us to embed some variables or expression in string
+-it makes concatenation more professional and easier
+
+let yearOfBirth = 1992;
+let name = "John";
+
+`${name} is  ${2023 - yearOfBirth} years old.` //John is 31 years old. //Interpolation
+name + " is " (2023 - yearOfBirth) + " years old." //John is 31 years old. //concatenation
+
+String functions: manipulates (update, modify, change, or more actions) the data stored in a string variable.
+
+let word = "enjoy"; //JOY
+
+length property: it gives us back how many characters you have in the string.
+
+How to get first and last characters from a string?
+let word1 ="Javascript", words = "Ruby";
+
+word1[0]; //"J"
+word2[0]; //"R"
+
+word1[word1.length - 1] //"t"
+word2[word2.length - 2] //"y"
+                                                        ///////End of ReCap//////
+
+
+STRING-SEARCHING cont.
+
+indexOf()
+TASK:returns the postion of the first occurrence of a substring 
+RETURN: returns the postion 
+DATA TYPE: number
+
+LastIndexOf()
+TASK: returns the last occurrence of a substring
+RETURN: returns the postion
+DATA TYPE: number
+
+
+//Extracting sub-strings from strings
+
+
+split()
+TASK:
+RETURN:
+DATA TYPE:
+
+
+
+
+substring()
+TASK:
+RETURN:
+DATA TYPE:
+
+
+substr() //deprecated not used as much anymore!
+TASK:
+RETURN:
+DATA TYPE:
+
+
+
+
+
+slice()
+TASK:
+RETURN:
+DATA TYPE:

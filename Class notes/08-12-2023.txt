@@ -1,0 +1,58 @@
+
+
+
+08-12-2023
+
+
+Recap:
+-control flow
+-if block can be used without an else, in situations where else does not make sense to use 
+-else does not make sense to use without an else
+- nested if else statement:
+    -
+
+
+if (condition){
+    if (condition){
+
+    }
+    else if (condition){
+
+    }
+    else {
+
+    }
+
+}
+
+else if (condition) {
+
+}
+else if (condition) {
+
+}
+
+else if (condition) {
+}
+
+else {
+
+} // end condition, you also don't need to have an else sometimes depending on conditions
+
+
+
+
+
+
+//Ternary operator ? = if || else = :
+
+let num = ;
+
+if(num % 2 === 0) console.log("EVEN");
+else console.log("ODD");
+
+num % 2 === 0 ? console.log("EVEN") : console.log("ODD")
+
+num > 0 ? console.log("POS") : num < 0 ? console.log ("NEG") : console.log("ZERO")
+
+

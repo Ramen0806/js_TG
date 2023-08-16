@@ -1,0 +1,18 @@
+
+
+08-07-2023 JS Functions
+
+
+Function: it is a block of code that could be reused with a function name.
+
+It is useful to create a logic and implement it in a function and reuse it many times.
+getRandomNumber(5, 15);
+getRandomNumber(1, 100);
+
+
+
+
+Things to Discuss while creating a function?
+Task: what your function Must do
+Arguments: Does it take any argument? How many? what does function should do with these arguments?
+Return: should it return a value or not

@@ -1,0 +1,79 @@
+Computer:
+A computer is an electronic machine that is used to input, process, and then output data, typically in binary form,
+ according to instructions given to it in a variable program.
+Computer is consist of Software and hardware.
+    Software: Operating Systems, Microsoft Office Suite, Paint
+    Hardware: Mouse, screen, printer, hard-disk, CPU
+    |||||||||||||||||||||| -> oldest way of number Systems
+    0 1 2 3 4 5 6 7 8 9 10 - base-10 number systems
+ Binary Code: ones and zeros
+ 1=one
+ 0=OFF
+ -It is the machine language what computer underatands
+ -All letters, digits, shaoes and more are converted to binary code to be understood and processed by computer.
+-machine 7
+-input
+-output
+-code
+-data
+-binary code
+Binary Units:
+Bit: one or zero
+byte: 8 bits
+kilobyteL 1024 bytes
+            
+            
+            byte								
+128	64	32	16	8	4	2	1	
+bit	bit	bit	bit	bit	bit	bit	bit	Value 
+                                needed 
+0	0	0	0	0	0	0	0	0
+0	0	0	0	0	0	0	1	1
+0	0	0	0	0	0	1	0	2
+0	0	0	0	0	0	1	1	3
+0	0	0	0	0	1	0	0	4
+0	0	0	0	0	1	0	1	5
+0	0	0	0	0	1	1	0	6
+0	0	0	0	0	1	1	1	7
+0	0	0	0	1	0	0	0	8
+0	0	0	0	1	0	0	1	9
+0	0	0	0	1	0	1	0	10
+0	0	0	1	1	0	1	1	27
+0	1	0	1	1	1	0	1	93
+0	1	1	0	0	1	0	0	d=100
+
+use ASCII Table  
+
+Programming language:
+-You can create apps
+-communication with the machine
+-has rules (SYNTAX)
+-Examples: JavaScript, Java, Go, Python, JavaScript
+
+
+
+Interpeted lanaguages: Javascript
+compiled lanaguages: lack ambiguity - confusion - conflict
+
+
+Compilation - compile - compiler -> checking if your code is grammatically correct 
+execut- excute 0 excutor  -> running the code
+
+
+Install node.js and check the version
+1. Download it from nodejs.org/en/Download
+2.Mac: Open terminal and run "node - v"
+ 
+ 
+
+ First program:
+    console.log("Hello world!");    // This is a coding statement
+        /* This is how you write 
+        a multi line comment */
+
+
+Note: It is recommended to put ; after every coding statement (JS) (unwritten rule)
+In other lanaguages it is a must!
+
+
+Console.log() is used to output the text

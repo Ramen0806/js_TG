@@ -1,0 +1,98 @@
+
+
+08-09-2023 JS if else statements
+-it works around a condition which is either true or false
+- we can have if without any else statements
+- but we can not use else without if
+
+if(condition) // true or false or something that returns true or false
+3 == 3
+passcode = 0000
+
+if(condition) {
+    // this block will be executed if the condition is true
+}
+
+else {
+    this block will be executed if the above condition is false
+}
+
+let num = 1-100;
+
+if(num <= 50){
+    console.log("This number is in the first half");
+}
+
+else {
+    console.log("This number is in the second half"); // not needed for this task but if asked for we can!
+}
+
+
+
+let num = -5 and 5;
+
+if(num > 0){
+    console.log("This number is positive");
+}
+
+else if(num < 0){
+    console.log("This number is negative");
+}
+
+else{
+    console.log("This number is 0);
+}
+
+
+let time = ____;
+
+if(time > 6:00 AM && time < 10:00 AM){
+    //Good Morning
+}
+
+else if (time >=)
+
+
+
+
+
+if(condition){
+    //if block
+}
+
+else {
+    //else block
+}
+
+//block
+
+
+let score = 1 point 
+
+Random number between 1 and 100 (both inclusive)
+
+even -> 2 * point
+divisble by 10 -> 3* point
+25, 50, 75, 100 -> 4 * point
+7 -> point * 7
+
+3 -> 1
+10 -> 6
+7 -> 7 
+
+
+
+AMAZON LOGIN passcode
+
+if(phone.isCorrect()|| email.isCorrect()){
+    //ask passcode
+    if(password.isCorrect()){
+        //LOGIN
+    }
+    else{
+        //Incorrect Password
+    }
+}
+else{
+    //Incorrect Phone Number
+}

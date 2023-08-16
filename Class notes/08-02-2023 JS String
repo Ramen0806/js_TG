@@ -1,0 +1,100 @@
+
+
+08-02-2023 JS strings
+
+-It is a sequence of characters stored in double or single quotes
+
+let str1 = "";
+let str2 = '';
+
+Examples / "TechGlobal" , "Hello", etc..
+
+^ --> carat  
+~ --> tilda
+
+
+Primitive vs Object
+
+Primitives: basic data types - allocates less memory - faster to use
+Note : Primitives have a limited capacity to store data and that is why we use objects.
+
+Objects: Complex data types - allocates more memory - slower to use
+
+Property vs function
+-function takes ()
+-property takes no ()
+
+Make sure you understand what property or the function you used returns and what is the return data type.
+What it does? Task
+what it returns? result-value
+what is the return data type? result-data type
+
+
+Function = Method = Behavior
+
+
+Mutable = can be changed
+Immutable = can not be changed
+
+Strings are immutable data types
+
+
+toLowerCase() : 
+Task- converts all upper case to lower case
+Return- string back lowercased
+Data Type: String
+
+toUpperCase() : 
+Task- converts all lower case to upper case
+Return- string back uppercased
+Data Type: String
+
+RAMEZ
+R = 0
+A = 1
+M = 2
+E = 4
+Z = 5
+
+
+Propert access with []
+Task: returns the characters at the given index
+Return: one character at the given index
+Data type: string
+
+Note: When you have a string with multiple characters:
+The first character will always have index of 0
+The last character will always have index of length-1
+If you try to use an index that is out of the range 0 and the length -1, it returns undefined
+
+
+
+"RAMEZ" - when you use charAt() anything after the last character will result in empty space
+
+charAt() Function
+Task:returns the character at the specified index if it exists
+Returns: one character at the specified index
+Data type: string
+
+Note: When you have a string with multiple characters:
+The first character will always have index of 0
+The last character will always have index of length-1
+If you try to use an index that is out of the range 0 and the length -1, it returns empty string
+
+charCodeAt() Function
+Task: returns Unicode representation of the character at the specifed index
+Returns: Unicode representation 
+Data type: Number
+
+search() Function
+Task: searches a string for another string (or a regular expression) and returns the position of the match.
+Returns: returns the index of the first match
+Data type: number
+Note: if the substring you are searching for doesn't exist in the original string, then you will get -1.
+
+
+
+includes() Function
+Task: searches a string for another string or substring and returns true or false.
+Returns: returns true if substring is found or false if it is not found
+Data type: booleng

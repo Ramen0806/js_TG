@@ -1,0 +1,43 @@
+
+07-31-2023 Js numbers & Math object
+
+
+other lanaguages (Compiled): byte, short, long, int, float, double, BigInteger
+Js: numbers
+
+let num = 1.5;
+let num = 10;
+
+-It is accurate up to 15-16 digits 
+-BigInteger data type is used for larger numbers 
+
+"2" * 5 => 10
+"10" / "2" => 5
+"abc" * "Hello"     => NaN (Not a Number) //Trying to do arithmetic with a non-numeric string 
+                                            will result in NaN (Not a Number).
+
+
+Number functions
+toPrecision(2) -> you want to see 2 digits regardless of decimal point
+toFixed(2) -> you want to see 2 digits for the decimal point
+
+isInteger() vs isSafeInteger() :
+
+Example:                                Integer                                 Safe Integer
+25                                      true                                    true
+753289458684568347590275918539202348    true                                    false
+
+-9007199254740991 to 9007199254740991 -> any number between these is a safe integer and can be stored as a number
+Anything less than  -9007199254740991 or more than 9007199254740991 
+
+JavaScript Math Object Functions
+-abs(x) - returns the absolute value of x
+-ceil(x) - returns x, rounded upwards to the nearest integer
+-floor(x) - returns x, rounded downwards to the nearest integer
+-max(x1,x2,..) - returns the number with the highest value
+-min(x1,x2,..) - returns the number with the lowest value
+-pow(x, y) - returns the value of x to the power of y
+-random() - returns a random number between 0 and 1 (0 included but 1 excluded)
+-round(x) - rounds x to the nearest integer
+-sqrt(x) - returns the square root of x
+-trunc(x) - returns the integer part of a number (x)
