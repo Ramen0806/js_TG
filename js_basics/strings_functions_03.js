@@ -37,7 +37,7 @@ console.log(number2)
 // Hello      -> --Hello--
 
 let s1 = "Hello"
-let _s1 = s1.padStart(7,"-")
+let _s1 = s1.padStart(7, "-")
 let _s2 = _s1.padEnd(9, "-")
 console.log(_s2)
 // OR
@@ -47,7 +47,7 @@ console.log(`--${s1}--`);
 
 //Concatenation -concat() function - not too useful 
 
-let str1 = "Hello", str2 =  "World";
+let str1 = "Hello", str2 = "World";
 console.log(str1 + " " + str2); //Hello world
 console.log(`${str1} ${str2}`); //Hello world
 

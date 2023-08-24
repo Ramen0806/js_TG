@@ -1,0 +1,16 @@
+
+
+08-21-2023 Arrays
+
+Data Types:
+1.Primitives - string, number, boolean, bigint, undefined, null, symbol
+2.Reference Types - objects which include Arrays, Maps, Date, Time, Math, Number, string, and more...
+
+
+
+
+Arrays can store mutliple values in a single variable. - collections
+
+
+
+

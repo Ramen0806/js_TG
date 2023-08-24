@@ -1,0 +1,27 @@
+
+
+Shifiting and unshifting elements
+
+const cars = [ 'BMW', 'Mercedes', 'Tesla'];
+
+cars.unshift('Toyota');
+
+console.log(cars); // [ 'Toyota', 'BMW', 'Mercedes', 'Tesla' ]
+
+cars.unshift('Honda', 'Kia');
+console.log(cars); // [ 'Honda', 'Kia', 'Toyota', 'BMW', 'Mercedes', 'Tesla' ]
+
+cars.unshift(); // returns the removed element -Honda
+console.log(cars); // [ 'Kia','Toyota', 'BMW', 'Mercedes', 'Tesla' ]
+
+
+const newArr = [];
+let result = newArr.pop(); 
+let result2 = newArr.shift(); 
+
+console.log(result); // undefined
+console.log(result2); // undefined
+console.log(newArr); // []
+
+
+
