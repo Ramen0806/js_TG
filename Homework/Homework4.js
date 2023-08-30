@@ -16,9 +16,11 @@ Expected Output:
 
 */
 
-
-
-
+for (let i = 1; i <= 100; i++){
+    if( i % 7 === 0){
+        console.log(i);
+    }
+}
 
 
 /*
@@ -38,8 +40,11 @@ Expected Output:
 
 */
 
-
-
+for (let i = 1; i <= 50; i++) {
+    if (i % 2 === 0 && i % 3 === 0) {
+        console.log(i); // Output the number
+    }
+}
 
 
 
@@ -62,8 +67,11 @@ Expected Output:
 
 */
 
-
-
+for (let i = 100; i >= 50 ; i --){
+    if (i % 5 === 0){
+        console.log(i)
+    }
+}
 
 
 /*
@@ -85,8 +93,9 @@ The square of 7 is =  49
 */
 
 
-
-
+for (let i = 0; i <= 7; i++) {
+    console.log(`The square of ${i} is = ${i * i}`)
+}
 
 /*
 Task 5
@@ -100,9 +109,12 @@ Expected Output:
 55
 */
 
+let sum = 0;
 
-
-
+for (let i = 1; i <= 10; i++) {
+    sum += i;
+}
+console.log(sum);
 
 
 
@@ -121,9 +133,15 @@ For example:
 0! (by convention) is defined as 1.
 */
 
+const randomNumber = Math.floor(Math.random() * 10) + 1;
 
+console.log(`Random Number: ${randomNumber}`);
 
-
+let factorial = 1;
+for (let i = 1; i <= randomNumber; i++) {
+    factorial *= i;
+}
+console.log(`Factorial of ${randomNumber}: ${factorial}`);
 
 
 /*
@@ -141,10 +159,21 @@ The random number is {randomNumber} and it took {attempts} attempt/s to generate
 
 */
 
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+let randomNumber$;
+let attempts;
 
+for (attempts = 1; ; attempts++) {
+    randomNumber$ = getRandomNumber(1, 100);
+    if (randomNumber$ % 5 === 0) {
+        break;
+    }
+}
 
-
+console.log(`The random number is ${randomNumber$} and it took ${attempts} attempt/s to generate it.`);
 
 
 /*
@@ -163,13 +192,10 @@ Expected Result:
 
 */
 
+const countries =['Germany', 'Argentina', 'Ukraine', 'Romania'];
 
-
-
-
-
-
-
+console.log(countries);
+console.log(countries.sort());
 
 
 /*
@@ -190,8 +216,13 @@ true
 
 */
 
+const cartoonD = ['Scooby Doo','Snoopy','Blue','Pluto','Dino','Sparky'];
 
+console.log(cartoonD);
 
+if( cartoonD.includes('Pluto') ) {
+    console.log(true);
+};
 
 
 /*
@@ -211,12 +242,15 @@ Expected Result:
 false
 */
 
+const cartoonCats = [  'Garfield', 'Tom', 'Sylvester', 'Azrael'];
 
+console.log(cartoonCats.sort());
 
+const hasGarfield = cartoonCats.includes('Garfield');
+const hasFelix = cartoonCats.includes('Felix');
+const hasBoth = hasGarfield && hasFelix;
 
-
-
-
+console.log(hasBoth);
 
 
 /*
@@ -238,12 +272,15 @@ Expected Result:
 15.75
 */
 
+const numbers = [
+    10.5, 20.75, 70, 80, 15.75
+];
 
+console.log(numbers);
 
-
-
-
-
+for (const number of numbers) {
+    console.log(number);
+}
 
 
 /*
@@ -264,12 +301,25 @@ Elements having 'book' or 'pen' = 4
 
 */
 
+const items = ['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler'];
 
+console.log(items);
 
+let startWithBPCount = 0;
+for (const item of items) {
+    if (item.charAt(0).toUpperCase() === 'B' || item.charAt(0).toUpperCase() === 'P') {
+        startWithBPCount++;
+    }
+}
+console.log(`Elements starting with 'B' or 'P' = ${startWithBPCount}`);
 
-
-
-
+let hasBookOrPenCount = 0;
+for (const item of items) {
+    if (item.toLowerCase().includes('book') || item.toLowerCase().includes('pen')) {
+        hasBookOrPenCount++;
+    }
+}
+console.log(`Elements having 'book' or 'pen' = ${hasBookOrPenCount}`);
 
 
 /*
@@ -291,12 +341,27 @@ Elements that are less than 10 = 4
 Elements that are 10 = 2
 */
 
+const numbers_1 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78];
 
+console.log(numbers_1);
 
+let moreThan10Count = 0;
+let lessThan10Count = 0;
+let equalTo10Count = 0;
 
+for (const number of numbers_1) {
+    if (number > 10) {
+        moreThan10Count++;
+    } else if (number < 10) {
+        lessThan10Count++;
+    } else {
+        equalTo10Count++;
+    }
+}
 
-
-
+console.log(`Elements that are more than 10 = ${moreThan10Count}`);
+console.log(`Elements that are less than 10 = ${lessThan10Count}`);
+console.log(`Elements that are 10 = ${equalTo10Count}`);
 
 
 
@@ -318,15 +383,19 @@ Expected Result:
 
 */
 
+const firstArray = [5, 8, 13, 1, 2];
+const secondArray = [9, 3, 67, 1, 0];
 
+console.log(`1st array is = [ ${firstArray} ]`);
+console.log(`2nd array is = [ ${secondArray} ]`);
 
+const thirdArray = [];
 
+for (let i = 0; i < firstArray.length; i++) {
+    thirdArray.push(Math.max(firstArray[i], secondArray[i]));
+}
 
-
-
-
-
-
+console.log(`3rd array is = [ ${thirdArray} ]`);
 
 
 /*
@@ -337,7 +406,7 @@ NOTE: Make your code dynamic that works for any array and return -1 if there are
 For two elements to be considered as duplicated, value and data types of the elements must be same.
 
 Examples:
-firstDuplicate([ 3, 7, 10, 0, 3, 10 ])		-> 10
+firstDuplicate([ 3, 7, 10, 0, 3, 10 ])		-> 3
 firstDuplicate([ 5, 7, 7, 0, 5, 10 ])		-> 5
 firstDuplicate([ 5, '5', 3, 7, 4 ])		-> -1
 firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])	-> 'abc'
@@ -346,19 +415,26 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 
 */
 
+function firstDuplicate(arr) {
+    const length = arr.length;
 
+    for (let i = 0; i < length; i++) {
+        for (let j = i + 1; j < length; j++) {
+            if (arr[i] === arr[j]) {
+                return arr[i];
+            }
+        }
+    }
 
+    return -1;
+}
 
-
-
-
-
-
-
-
-
-
-
+console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));   // Output: 3
+console.log(firstDuplicate([5, 7, 7, 0, 5, 10]));   // Output: 5
+console.log(firstDuplicate([5, '5', 3, 7, 4]));     // Output: -1
+console.log(firstDuplicate([123, 'abc', '123', 3, 'abc'])); // Output: 'abc'
+console.log(firstDuplicate([1, 2, 3]));             // Output: -1
+console.log(firstDuplicate(['foo', 'abc', '123', 'bar'])); // Output: -1
 
 
 
@@ -372,16 +448,33 @@ For two elements to be considered as duplicated, value and data types of the ele
 
 Examples:
 getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])		-> [ 0, -7 ]
-getDuplicates([ 1, 2, 5, 0, 7 ])			-> [ ]
+			-> [ ]
 getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])	-> [ 'foo', 'a’ ]
 getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])		-> [ ]
 
 */
 
+function getDuplicates(array) {
+
+    const uniqueElements = new Set();
+  
+    const duplicates = [];
+    for (const element of array) {
+      if (uniqueElements.has(element)) {
+        duplicates.push(element);
+      } else {
+        uniqueElements.add(element);
+      }
+    }
+  
+    return duplicates;
+  }
 
 
-
-
+console.log(getDuplicates([0,-4, -7, 0, 5, 10, 45, -7, 0 ]));
+console.log(getDuplicates([ 1, 2, 5, 0, 7 ]));
+console.log(getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ]));
+console.log(getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]));
 
 
 /*
@@ -401,13 +494,24 @@ reverseStringWords("    ") 		-> ""
 
 */
 
+function reverseStringWords(string) {
+    const words = string.split(" ");
+  
+    for (let i = 0; i < words.length; i++) {
+      words[i] = words[i].split("").reverse().join("");
+    }
+  
+    const reversedString = words.join(" ");
+  
+    return reversedString;
+  }
+  
 
-
-
-
-
-
-
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("I like JavaScript"));
+console.log(reverseStringWords("Hello"));
+console.log(reverseStringWords(" "));
+console.log(reverseStringWords(""));
 
 
 
@@ -427,16 +531,25 @@ getEvens(3, 3)	-> [ ]
 
 */
 
+function getEvens(x, y) {
+   
+    let new_X = Math.min(x,y)
+    let new_Y = Math.max(x,y)
+    const evenNumbers = [];
 
+    for (let num = new_X; num <= new_Y; num++) {
+        if (num % 2 === 0) {
+            evenNumbers.push(num);
+        }
+    }
 
+    return evenNumbers;
+}
 
-
-
-
-
-
-
-
+console.log(getEvens(2, 7));
+console.log(getEvens(17, 5));
+console.log(getEvens(4, 4));
+console.log(getEvens(3, 3));
 
 
 
@@ -456,6 +569,26 @@ getMultipleOf5(2, 4)	-> [ ]
 */
 
 
+
+function getMultipleOf5(x, y){
+
+    let newX = Math.min(x,y)
+    let newY = Math.max(x,y)
+
+    const MultipleOf5 = [];
+
+  for (let i = newX; i <= newY; i++) {
+        if( i % 5 === 0) {
+           MultipleOf5.push(i);
+        }
+    }
+    if( x < y) return MultipleOf5;
+    else return  MultipleOf5.reverse();
+    
+}
+console.log(getMultipleOf5(3, 17));
+console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(5, 5));
 
 
 
@@ -482,5 +615,32 @@ fizzBuzz(9, 6)	-> Fizz | 7 | 8 | Fizz
 
 */
 
+function fizzBuzz(x, y) {
+    let $newX = Math.min(x, y);
+    let $newY = Math.max(x, y);
+    let result = " ";
+for (let i = $newX; i <= $newY; i++) {
+    if (i % 15 === 0) {
+        result += 'FizzBuzz';
+    }
 
+    else if (i % 3 === 0) {
+        result += 'Fizz';
+    }
+    else if (i % 5 === 0) {
+       result += 'Buzz';
+    }
+    else {
+       result += i;
+    }
+    if (i !== $newY) {
+        result += ' | ';
+    }
+}
+return result 
+}
 
+console.log(fizzBuzz(13, 18));
+console.log(fizzBuzz(12, 5));
+console.log(fizzBuzz(5, 5));
+console.log(fizzBuzz(9, 6));
