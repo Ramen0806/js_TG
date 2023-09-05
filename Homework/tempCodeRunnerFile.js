@@ -1,20 +1,9 @@
+function removeExtraSpaces(string) {
 
-function getMultipleOf5(x, y){
-
-    let newX = Math.min(x,y)
-    let newY = Math.max(x,y)
-
-    const MultipleOf5 = [];
-
-  for (let i = newX; i <= newY; i++) {
-        if( i % 5 === 0) {
-           MultipleOf5.push(i);
-        }
-    }
-    if( x < y) return MultipleOf5;
-    else return  MultipleOf5.reverse();
-    
+    return string.split(' ').filter(x => x.length >= 1).join(' ');
 }
-console.log(getMultipleOf5(3, 17));
-console.log(getMultipleOf5(23, 5));
-console.log(getMultipleOf5(5, 5));
+
+console.log(removeExtraSpaces("Hello"));
+console.log(removeExtraSpaces("      Hello    World     "));
+console.log(removeExtraSpaces("     JavaScript is          fun"));
+console.log(removeExtraSpaces(""));

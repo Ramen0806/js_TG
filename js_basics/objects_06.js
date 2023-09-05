@@ -56,12 +56,27 @@ const users = [
 
 console.log(users.length); // 4
 // count how many users are older than 30
+//Find and store all the users that are younger 35 in an array
 
 let count = 0;
+let countCity = 0;
+const young35 = [];
 
 for (const user of users) {
     if (user.age > 30)  count++;
+    if (user.address.city == 'Chicago') countCity++;
+    if (user.age < 35 ) { young35.push(user.firstName)};
+    sum += user.age;
 }
 
-console.log(count);
+console.log(count); //2
+console.log(countCity); //2
+console.log(young35);
+console.log(sum);
+console.log(sum / users.length);
+ 
+
+
+
+
 

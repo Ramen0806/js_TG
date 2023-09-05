@@ -615,7 +615,7 @@ fizzBuzz(9, 6)	-> Fizz | 7 | 8 | Fizz
 
 */
 
-function fizzBuzz(x, y) {
+function fizzBuzz3(x, y) {
     let $newX = Math.min(x, y);
     let $newY = Math.max(x, y);
     let result = " ";
@@ -640,7 +640,7 @@ for (let i = $newX; i <= $newY; i++) {
 return result 
 }
 
-console.log(fizzBuzz(13, 18));
-console.log(fizzBuzz(12, 5));
-console.log(fizzBuzz(5, 5));
-console.log(fizzBuzz(9, 6));
+console.log(fizzBuzz3(13, 18));
+console.log(fizzBuzz3(12, 5));
+console.log(fizzBuzz3(5, 5));
+console.log(fizzBuzz3(9, 6));
