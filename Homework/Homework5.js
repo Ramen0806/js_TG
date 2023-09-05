@@ -182,6 +182,8 @@ isPalindrome("") 		-> true
 
 */
 
+
+
 function isPalindrome(string) {
 
     const reversedString = string.split('').reverse().join('');
