@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+
+    <h1 style="color:green">Personal Information Form</h1>
+    <div class="login-container">
+
+        <form action="your_login_handler.php" method="post">
+            <div class="form-group">
+                <label for="firstname">First name</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="lastname">Last name</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="number">Phone number</label>
+                <input type="number" id="number" name="number" required>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="hear-about">How did you hear about us?</label>
+                <input type="text" id="hear-about" name="hear-about">
+            </div>
+
+
+            <br>
+            <button type="submit" class="login-btn">Click</button>
+        </form>
+    </div>
+</body>
+
+</html>

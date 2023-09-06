@@ -438,9 +438,8 @@ function isEmailValid(email) {
     }
 
     const atCount = email.split("@").length - 1;
-    if (atCount !== 1) {
-        return false;
-    }
+    if (atCount !== 1) return false;
+    
     const beforeAtCount = email.split("@")[0].length;
     if (beforeAtCount < 2) return false;
 
