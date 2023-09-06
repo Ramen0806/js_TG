@@ -442,7 +442,7 @@ function isEmailValid(email) {
         return false;
     }
     const beforeAtCount = email.split("@")[0].length;
-    if (beforeAtCount <= 2) return false;
+    if (beforeAtCount < 2) return false;
 
     const afterAtCount = email.split("@")[1].split(".")[0].length;
 
@@ -459,6 +459,7 @@ console.log(isEmailValid("johndoe@@gmail.com"));//false
 console.log(isEmailValid("johndoe@.com")); //false
 console.log(isEmailValid("johndoe@a.com")); //false
 console.log(isEmailValid("johndoe@gmail.com")); //true
+
 
 
 /*
