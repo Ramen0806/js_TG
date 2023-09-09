@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            margin:50px
+        }
+    </style>
 </head>
 
 <body style="text-align: center;">
 
+<body >
+
     <h1 style="color:green">Personal Information Form</h1>
     <div class="login-container">
 
-        <form action="your_login_handler.php" method="post">
+        <form action="personalInformationForm.html" method="post">
             <div class="form-group">
-                <label for="firstname">First name</label>
-                <input type="text" id="firstname" name="firstname" required>
+                <label for="firstname"></label>
+                <input type="text" id="firstname" name="firstname" placeholder="Firstname" required>
             </div>
             <br>
             <div class="form-group">
-                <label for="lastname">Last name</label>
-                <input type="text" id="lastname" name="lastname" required>
+                <label for="lastname"></label>
+                <input type="text" id="lastname" name="lastname" placeholder="Lastname"required>
             </div>
             <br>
             <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
             </div>
             <br>
             <div class="form-group">
-                <label for="number">Phone number</label>
-                <input type="number" id="number" name="number" required>
+                <label for="number"></label>
+                <input type="number" id="number" name="number" placeholder="Phone Number"required>
             </div>
 
-            
+            <br>
             <div class="form-group">
-                <label for="hear-about">How did you hear about us?</label>
-                <input type="text" id="hear-about" name="hear-about">
+                <label for="hear-about"></label>
+                <textarea id="hear-about" name="hear-about" rows="4" placeholder="How did you hear about us?"></textarea>
             </div>
 
 

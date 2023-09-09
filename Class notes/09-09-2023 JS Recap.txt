@@ -1,0 +1,34 @@
+
+
+Recap:
+
+We can extract a callback function from built-in array methods
+
+
+//Difference between method and function 
+//Look at the left side and check if there is a dot then it is a method
+numbers.forEach(function) //method
+
+const myFunction = () => {};
+myFunction(); //fucntion 
+
+
+//List attributes for HTML elements
+
+body, div, p => these are elements elements
+style, id, class => these are attributes
+
+
+<h2> Fruits I like:</h2>
+<ul>
+<li>Banana</li>
+<li>Kiwi</li>
+<li>Apple</li>
+</ul>
+
+<h2> Fruits I like:</h2>
+<ol>
+<li>Banana</li>
+<li>Kiwi</li>
+<li>Apple</li>
+</ol>

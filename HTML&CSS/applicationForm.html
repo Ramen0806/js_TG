@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    body {
+        margin: left 50px;
+        background-color: rgb(255, 251, 251);
+
+    }
+</style>
+
+</head>
+<body >
+
+    <h1 style="color:blue">Contact Form for Tech Global</h1>
+    <div class="login-container">
+
+        <form action="applicationForm.html" >
+            <div class="form-group">
+                <p style ="font-size:medium;font-weight: bold;">Enter your fullname:</p>
+                <label for="Fullname"></label>
+                <input type="text" id="Fullname" name="Fullname" placeholder="Fullname" required>
+            </div>
+            
+            <div>
+                <p style ="font-size:medium;font-weight: bold;">Please select the you want to code</p>
+                <input type="radio" id="Male" name="Gender"></input>
+                <label for="Male">Male</label>
+                <br>
+                <input type="radio" id="Female" name="Gender"></input>
+                <label for="Female">Female</label>
+                <br>
+                <input type="radio" id="Prefer not to disclose"name="Gender"></input>
+                <label for="Prefer not to disclose">Prefer not to disclose</label>
+                <br>
+            </div>
+            <p style ="font-size:medium;font-weight: bold;">Address:</p>
+            <div class="form-group">
+                <label for="address"></label>
+                <input type="address" id="address" name="address" placeholder="address" required>
+            </div>
+
+          
+            <p style ="font-size:medium;font-weight: bold;">Email:</p>
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+            </div>
+            
+        
+            <p style ="font-size:medium;font-weight: bold;">Phone Number:</p>
+            <div class="form-group">
+                <label for="number"></label>
+                <input type="number" id="number" name="number" placeholder="Phone Number"required>
+            </div>
+
+            <br>
+            <p style ="font-size:medium;font-weight: bold;">How did you hear about us?</p>
+            <div class="form-group">
+                <label for="hear-about"></label>
+                <textarea id="hear-about" name="hear-about" rows="4" placeholder="How did you hear about us?"></textarea>
+            </div>
+            <br>
+            <input type="checkbox" id="I give my consent to be contacted."></input>
+            <label for="Selenium">I give my consent to be contacted.</label>
+            <br>
+            <br>
+            <button type="submit" class="login-btn">Submit</button>
+            <br>
+        </form>
+    </div>
+    
+</body>
+</html>

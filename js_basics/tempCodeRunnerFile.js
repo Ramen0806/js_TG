@@ -1,19 +1,13 @@
-
-const fruits = ['Apple' , 'Orange' , 'Kiwi' , 'Pineapple' , 'Mango' ,'Melon'];
-
-
-console.log(fruits.filter(fruit => fruit[0] === "M"));
-console.log(fruits.filter(fruit => fruit.toLowerCase().includes("apple")));
-console.log(fruits.filter(fruit => fruit.length === 5));
-console.log(fruits.filter(fruit => fruit.length !== 5));
-console.log(fruits.filter(fruit => {
-    fruit = fruit.toLowerCase();
-    return fruit.indexOf('a') >= 0 || fruit.indexOf('e') >= 0 
+const student = {
+    name: 'Alan',
+    age: 40,
+    email: 'alan@gmail.com',
 }
-));
 
-console.log(fruits.filter(fruit => fruit.toLowerCase().indexOf("i") >= 0).length);
-console.log(fruits.filter(fruit => fruit.toLowerCase().endsWith("e")).length);
+// [name, age, email]
 
+let studentKeys = Object.keys(student);
+let studentValues = Object.values(student);
 
-console.log(fruits.map((fruit) => fruit[0] + fruit[fruit.length - 1]));
+console.log(studentKeys);
+console.log(studentValues);
