@@ -1,13 +1,10 @@
-const student = {
-    name: 'Alan',
-    age: 40,
-    email: 'alan@gmail.com',
+
+function add(a) {
+    return function(b) {
+        return a + b;
+    };
 }
 
-// [name, age, email]
-
-let studentKeys = Object.keys(student);
-let studentValues = Object.values(student);
-
-console.log(studentKeys);
-console.log(studentValues);
+const addFive = add(5);
+console.log(addFive(3)); // Output: 8 (5 + 3)
+add(5)(3); // Output: 8 (5 + 3)
