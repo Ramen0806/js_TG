@@ -1,0 +1,11 @@
+
+
+this keyword
+
+Javascript is a functional programming language
+
+function printName (name) {
+    console.log(name);
+}
+
+
