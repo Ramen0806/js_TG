@@ -1,19 +1,12 @@
-function categorizeCharacters(word) {
-    const result = [[], [], []];
-    
-    for (let char of word) {
-      if (char >= '0' && char <= '9') {
-        result[1] += char; 
-      } else if (char >= 'a' && char <= 'z' || char >= 'A' && char <= 'Z') {
-        result[0] += char;
-      } else {
-        result[2] += char;
-      }
+ const noXInVariables = arr =>{
+        removedArr = arr.map(word =>{
+           return (word.toString().split("").filter(letter =>!(letter.toUpperCase() === "X"))).join("")
+        })
+        return removedArr.filter(word => (word.length > 0))
     }
-  
-    return result;
-  }
-
-console.log(categorizeCharacters("1234")); 
-console.log(categorizeCharacters("abc123$#%")); 
-console.log(categorizeCharacters("12ab$%3c%")); 
+      
+     
+console.log(noXInVariables(["abc", 123, "#$%"]));
+console.log(noXInVariables(["xyz", 123, "#$%"]));
+console.log(noXInVariables(["x", 123, "#$%"]))
+console.log(noXInVariables(["xyXyxy", "Xx", "ABC"]));

@@ -83,3 +83,15 @@ for (img of allImages) {
     console.log(img)
 }
 
+
+
+/**
+ * id => getElementById() - gets the single element
+ * class => getElementsByClassName() - gets all elements with the same classname in HTMLCollection
+ * tag => getElementsByTagName() - gets all same elements in HTMLCollection
+ * querySelector(), querySelectorAll() => gets elements/nodes using id, class or tag 
+ */
+
+
+
+
