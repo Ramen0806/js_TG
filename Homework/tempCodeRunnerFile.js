@@ -1,34 +1,18 @@
-function noXInVariables$(arr) {
-        let result = [];
-        for (let i = 0; i < arr.length; i++) {
-          const element = arr[i];
-          if (typeof element === "string") {
-            const mElement = element.split('').filter(char => char.toLowerCase() !== 'x').join('');
-            if (mElement !== "") {
-              result.push(mElement);
-            }
-          } else {
-            result.push(element);
-          }
-        }
-        return result;
-      }
-  
 
- const noXInVariables = arr => {
-  removedArr = arr.map(word => {
-         return (word.toString().split("").filter(letter =>!(letter.toUpperCase() === "X"))).join("")
-        });
-     return removedArr.filter(word => (word.length > 0))
+const findUniques = (arr1, arr2) => {
+  const a = arr1.filter((value, index) => arr1.indexOf(value) === index)
+  const b = arr2.filter((value, index) => arr2.indexOf(value) === index)
+  const unique = a.concat(b);
+  const uniqueList = [];
+  for(const el of unique){
+      if(!a.includes(el) || !b.includes(el)) uniqueList.push(el)
+  }
+  return uniqueList;
+
 }
-      
-     
-console.log(noXInVariables(["abc", 123, "#$%"]));
-console.log(noXInVariables(["xyz", 123, "#$%"]));
-console.log(noXInVariables(["x", 123, "#$%"]))
-console.log(noXInVariables(["xyXyxy", "Xx", "ABC"]));
-
-console.log(noXInVariables$(["abc", 123, "#$%"]));
-console.log(noXInVariables$(["xyz", 123, "#$%"]));
-console.log(noXInVariables$(["x", 123, "#$%"]))
-console.log(noXInVariables$(["xyXyxy", "Xx", "ABC"]));
+  console.log(findUniques([], [1, 2, 3, 2]));
+  console.log(findUniques([1, 2, 3, 4], [3, 4, 5, 5]));
+  console.log(findUniques([], [1, 2, 3, 2]));
+  console.log(findUniques([1, 2, 3, 4], [3, 4, 5, 5]));
+  console.log(findUniques([8, 9], [9, 8, 9]));
+  console.log(findUniques([-1, -2], [1, 2]));
