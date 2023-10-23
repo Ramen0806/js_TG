@@ -78,8 +78,14 @@ const hasVowel = (str) => {
     }
     return false;
 }
-console.log(hasVowel(""));
-console.log(hasVowel("JavaScript"));
+
+const hasVowel_ = (str) => str.split('').filter(x => ['a','e','i','o','u','A','E','I','O','U'].includes(x)).length > 0
+
+console.log(hasVowel(""));//false
+console.log(hasVowel("JavaScript"))//true
+console.log(hasVowel("Tech Global"))//true
+console.log(hasVowel("1234"))//false
+console.log(hasVowel("ABC"))//true
 /**
  * Start Vowel  
  * Write a function named as startVowel() which takes a string word as an argument 
@@ -94,6 +100,24 @@ console.log(hasVowel("JavaScript"));
  * startVowel("123") -> false
 */
 
+const startVowel = (str) => {
+
+    if (str.length === 0) return false;
+
+    const firstLetter = str[0];
+    const vowels = 'aeiouAEIOU';
+
+    return vowels.includes(firstLetter);
+}
+
+console.log(startVowel("Hello"));
+console.log(startVowel("Apple"));
+console.log(startVowel("orange"));
+console.log(startVowel(""));
+console.log(startVowel(" "));
+console.log(startVowel("123"));
+
+
 /**
  * Average of Edges
  * Write a function named averageOfEdges() which takes three number arguments and will return average of min and max numbers.
@@ -104,6 +128,22 @@ console.log(hasVowel("JavaScript"));
  * averageOfEdges(-3, 15, -3) -> 6
  * averageOfEdges(10, 13, 20) -> 15  
 */
+
+const averageOfEdges = (num1, num2, num3) => (Math.max(num1, num2, num3) + Math.min(num1, num2, num3))/2;
+
+const averageOfEdges_ = (a, b, c) => {
+    const min = Math.min(a, b, c);
+    const max = Math.max(a, b, c);
+
+    return (min + max) / 2;
+}
+
+
+console.log(averageOfEdges(0, 0, 0))
+console.log(averageOfEdges(0, 0, 6))
+console.log(averageOfEdges(-2, -2, 10))
+console.log(averageOfEdges(-3, 15, -3))
+console.log(averageOfEdges(10, 13, 20))
 
 /**
  * Swap First and Last Characters
@@ -119,6 +159,24 @@ console.log(hasVowel("JavaScript"));
  * replaceFirstLast(" A ") -> ""  
 */
 
+const replaceFirstLast_ = (string) => {
+    if (string.trim().length < 2) return "";
+    return string[string.length - 1] + string.slice(1, string.length - 1) + string[0]
+};
+
+const replaceFirstLast =  (str) => {
+    str = str.trim()
+    return str.length < 2 ? "" : str[str.length - 1] + str.slice(1, str.length - 1) + str [0];
+}
+
+
+
+console.log(replaceFirstLast(""));
+console.log(replaceFirstLast("Hello"));
+console.log(replaceFirstLast("Tech Global"));
+console.log(replaceFirstLast("A"));
+console.log(replaceFirstLast("     A      "));
+
 /**
  * Swap First and Last Four Characters   
  * Write a function named as swap4() which takes a string word as an argument 
@@ -132,6 +190,37 @@ console.log(hasVowel("JavaScript"));
  * swap4(" ") -> ""
  * swap4("Apple") -> ""
 */
+function swap4_ (word) {
+    if (word.length >= 8) {
+        const firstFour = word.substr(0, 4);
+        const lastFour = word.substr(word.length - 4);
+        const middle = word.substring(4, word.length - 4);
+        return lastFour + middle + firstFour;
+    } else {
+        return ""; 
+    }
+}
+
+const swap4 = (str) => {
+
+    if(str.length < 8) return " ";
+
+    let first4 = str.slice(0,4);
+    let middle = str.slice(4,-4);
+    let last4 = str.slice(-4);
+
+    return last4 + middle + first4;
+
+}
+
+
+console.log(swap4("abc"));            // ""
+console.log(swap4("JavaScript"));     // "riptScJava"
+console.log(swap4("TechGlobal"));     // "obalGlTech"
+console.log(swap4(""));               // ""
+console.log(swap4("    "));           // ""
+console.log(swap4("Apple")); 
+
 
 /** 
  * Swap First and Last Words
@@ -148,6 +237,45 @@ console.log(hasVowel("JavaScript"));
  * swapFirstLastWord("Hello ") -> ""  
 */
 
+
+function swapFirstLastWord_ (sentence) {
+    const words = sentence.trim().split(" ");
+    
+    if (words.length >= 2) {
+        const firstWord = words[0];
+        const lastWord = words[words.length - 1];
+        words[0] = lastWord;
+        words[words.length - 1] = firstWord;
+        return words.join(" ");
+    } else {
+        return ""; 
+    }
+}
+
+const swapFirstLastWord = (str) => {
+
+    str = str.trim();
+
+    if(str.includes(' ')){
+        let firstWord = str.slice(0, str.indexOf(' '));
+        let middle = str.slice(str.indexOf(' '), str.lastIndexOf(' ') + 1);
+        let lastWord = str.slice(str.lastIndexOf(' ') + 1);
+
+        return lastWord + middle + firstWord;
+    }
+    return "";
+}
+
+
+console.log(swapFirstLastWord("Hello World"));           // "World Hello"
+console.log(swapFirstLastWord("I like JavaScript"));     // "JavaScript like I"
+console.log(swapFirstLastWord("foo bar foo bar"));      // "bar bar foo foo"
+console.log(swapFirstLastWord(""));                      // ""
+console.log(swapFirstLastWord("    "));                  // ""
+console.log(swapFirstLastWord("Hello"));                 // ""
+console.log(swapFirstLastWord("Hello   ")); 
+
+
 /**
  * Count Positive Numbers   
  * Write a function named countPos() which takes an array of numbers as an argument
@@ -157,6 +285,20 @@ console.log(hasVowel("JavaScript"));
  * countPos([-23, -4, 0, 2, 5, 90, 123]) -> 4
  * countPos([0, -1, -2, -3]) -> 0
 */
+function countPos_(array) {
+    let countPositive = 0
+    for (const element of array) {
+        if (element > 0) countPositive++;
+
+    }
+    return countPositive;
+}
+
+const countPos = (arr) => arr.filter(num => num > 0).length
+
+console.log(countPos([-45, 0, 0, 34, 5, 67]));
+console.log(countPos([-23, -4, 0, 2, 5, 90, 123]));
+console.log(countPos([0, -1, -2, -3]));
 
 /**
  * Find Even Numbers
@@ -170,6 +312,43 @@ console.log(hasVowel("JavaScript"));
  * getEvens(4, 4) -> [ 4 ]
  * getEvens(3, 3) -> [ ]
 */
+
+
+function getEvens_(x, y) {
+   
+    let new_X = Math.min(x,y)
+    let new_Y = Math.max(x,y)
+    const evenNumbers = [];
+
+    for (let num = new_X; num <= new_Y; num++) {
+        if (num % 2 === 0) {
+            evenNumbers.push(num);
+        }
+    }
+
+    return evenNumbers;
+}
+
+const getEvens = (num1, num2) => {
+
+    let new_X = Math.min(num1, num2)
+    let new_Y = Math.max(num1, num2)
+    const evenNums = [];
+
+    for (let num = new_X; num <= new_Y; num++){
+        if (num % 2 == 0){
+            evenNums.push(num)
+    }
+} 
+return evenNums;
+}
+
+console.log(getEvens(2, 7));
+console.log(getEvens(17, 5));
+console.log(getEvens(4, 4));
+console.log(getEvens(3, 3));
+
+
 
 /**
  * Find Numbers Divisible By 5  
@@ -185,6 +364,38 @@ console.log(hasVowel("JavaScript"));
  * getMultipleOf5(2, 4) -> [ ]   
 */
 
+
+function getMultipleOf5(x, y){
+
+    let newX = Math.min(x,y)
+    let newY = Math.max(x,y)
+
+    const MultipleOf5 = [];
+
+  for (let i = newX; i <= newY; i++) {
+        if( i % 5 === 0) {
+           MultipleOf5.push(i);
+        }
+    }
+    if( x < y) return MultipleOf5;
+    else return  MultipleOf5.reverse();
+    
+}
+
+const getMultipleOf5_ = (x, y) => {
+    let MultipleOf5 = [];
+
+    for (i= Math.max(x, y); i >= Math.min(x, y); i--){
+        if(i % 5 === 0){ MultipleOf5.push(i);
+    }
+}
+return MultipleOf5;
+}
+console.log(getMultipleOf5_(3, 17));
+console.log(getMultipleOf5_(23, 5));
+console.log(getMultipleOf5_(5, 5));
+
+
 /**
  * Count Negative Numbers
  * Write a function named countNeg() which takes an array of numbers as an argument and returns how many elements are negative when invoked.
@@ -193,6 +404,19 @@ console.log(hasVowel("JavaScript"));
  * countNeg([-23, -4, 0, 2, 5, 90, 123]) -> 2
  * countNeg([0, -1, -2, -3]) -> 3 
 */
+
+const countNeg = (arr) => {
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) { count++};
+    }
+    return count
+}
+
+console.log(countNeg([-45, 0, 0, 34, 5, 67]));
+console.log(countNeg([-23, -4, 0, 2, 5, 90, 123]));
+console.log(countNeg([0, -1, -2, -3]));
 
 /**
  * Count A 
@@ -204,6 +428,21 @@ console.log(hasVowel("JavaScript"));
  * countA("Cypress") -> 0   
 */
 
+function countA(string) {
+    let count_A = 0;
+    for (const element of string) {
+        if (element.toUpperCase().includes("A")) count_A++;
+    }
+    return count_A
+}
+
+const countA_ = (str) => str.split('').filter(letter => letter.toLowerCase() === 'a').length
+
+console.log(countA_("TechGlobal is a QA bootcamp"));
+console.log(countA("QA stands for Quality Assurance"));
+console.log(countA("Cypress"));
+
+
 /**
  * Count Words    
  * Write a function named countWords() which takes a string argument and returns the total count of words in the given string when invoked.
@@ -213,6 +452,22 @@ console.log(hasVowel("JavaScript"));
  * countWords("Cypress is an UI automation tool. ") -> 6
  * countWords("1 2 3 4") -> 4  
 */
+
+function countWords(string) {
+    const trimmedString = string.trim();
+    const wordsArray = trimmedString.split(" ");
+    let wordCount = 0;
+
+    for (const word of wordsArray) {
+        if (word !== '') wordCount++;
+    }
+    return wordCount;
+}
+const countWords_ = (str) => str.trim().split(' ').length
+
+console.log(countWords_("     Javascript is fun     "));
+console.log(countWords("Cypress is an UI automation tool.    "));
+console.log(countWords("1 2 3 4"));
 
 /**
  * Factorial
@@ -227,6 +482,21 @@ console.log(hasVowel("JavaScript"));
  * factorial(1) -> 1
 */
 
+const factorial_ = (num) => num === 0 || num === 1? 1: num * factorial(num - 1)
+
+const factorial = (num) => {
+    let factorial = 1;
+    for (let i = 1; i <= num; i++) {
+        factorial *= i;
+    }
+    return factorial;
+}
+console.log(factorial_(5));
+console.log(factorial(4));
+console.log(factorial(0));
+console.log(factorial(1));
+
+
 /**
  * Count 3 or Less  
  * Write a function named as count3OrLess() which takes a string word as an argument 
@@ -239,6 +509,27 @@ console.log(hasVowel("JavaScript"));
  * count3OrLess("") -> 0
 */
 
+function count3OrLess(string) {
+    const words = string.split(" ");
+    let count3 = 0;
+
+    for (let word of words) {
+        if (word.length > 0 && word.length <= 3) {
+            count3++;
+        }
+    }
+
+    return count3;
+}
+
+const count3OrLess_ = (str) => str.trim().split(' ').filter(word => word.length > 0 && word.length <= 3).length
+
+console.log(count3OrLess_("Hello"));
+console.log(count3OrLess_("Hi John"));
+console.log(count3OrLess_("JavaScript is fun"));
+console.log(count3OrLess("My name is John Doe"));
+console.log(count3OrLess(""));
+
 /**
  * Remove Extra Spaces
  * Write a function named as removeExtraSpaces() which takes a string word as an argument
@@ -250,6 +541,18 @@ console.log(hasVowel("JavaScript"));
  * removeExtraSpaces("") -> ""
 */
 
+function removeExtraSpaces(string) {
+
+    return string.split(' ').filter(x => x.length >= 1).join(' ');
+}
+
+const removeExtraSpaces_ = (str) => str.trim().split(' ').filter(x => x.length > 0).join(' ')
+
+console.log(removeExtraSpaces("Hello"));
+console.log(removeExtraSpaces_("      Hello    World     "));
+console.log(removeExtraSpaces("     JavaScript is          fun"));
+console.log(removeExtraSpaces(""));
+
 /**
  * Middle Number
  * Write a function named middleInt() which takes three number arguments and return the middle number.
@@ -260,6 +563,16 @@ console.log(hasVowel("JavaScript"));
  * middleInt(1, 1, 1) -> 1 
  * middleInt(-1, 25, 10) -> 10
 */
+
+const middleInt = (x, y, z) => [x, y, z].sort((a, b)=> a - b)[1]
+
+console.log(middleInt(1,2,2));
+console.log(middleInt(5,5,8));
+console.log(middleInt(5,3,5));
+console.log(middleInt(1,1,1));
+console.log(middleInt(-1,25,10,6,5));
+
+
 
 /**
  * First Duplicate Element
@@ -275,6 +588,23 @@ console.log(hasVowel("JavaScript"));
  * firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) -> -1
 */
 
+const firstDuplicate = (arr) => {
+
+    for(let i = 0; i < arr.length; i++){
+        for (let j = i + 1; j < arr.length; j++){
+            if (arr[i] === arr[j]) return arr[i]
+        }
+    }
+    return -1;
+};
+
+console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));
+console.log(firstDuplicate([5, 7, 7, 0, 5, 10]));
+console.log(firstDuplicate([5, '5', 3, 7, 4]));
+console.log(firstDuplicate([123, 'abc', '123', 3, 'abc']));
+console.log(firstDuplicate([1, 2, 3]));
+console.log(firstDuplicate(['foo', 'abc', '123', 'bar']));
+
 /**
  * Find All Duplicate Elements
  * Write a function named as getDuplicates() which takes an array argument and returns all the duplicated elements in the array when invoked.
@@ -287,6 +617,28 @@ console.log(hasVowel("JavaScript"));
  * getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]) -> [ ]
 */
 
+const getDuplicates = (array) => {
+
+    const uniqueElements = new Set();
+  
+    const duplicates = [];
+    for (const element of array) {
+      if (uniqueElements.has(element)) {
+        duplicates.push(element);
+      } else {
+        uniqueElements.add(element);
+      }
+    }
+  
+    return duplicates;
+  }
+
+
+console.log(getDuplicates([0,-4, -7, 0, 5, 10, 45, -7, 0 ]));
+console.log(getDuplicates([ 1, 2, 5, 0, 7 ]));
+console.log(getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ]));
+console.log(getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ]));
+
 /**
  * Count Vowels
  * Write a function named as countVowels() which takes a string word as an argument and returns the count of the vowel letters when invoked.
@@ -297,6 +649,29 @@ console.log(hasVowel("JavaScript"));
  * countVowels("") -> 0 
 */
 
+function countVowels(string) {
+    let countV = 0;
+    for (const letters of string) {
+        if ("aeouiAEOUI".includes(letters)) countV++;
+    }
+    return countV;
+}
+
+const countVowels_ = (word) => {
+    let vowelCount = 0;
+    const vowels = ['A','E','I','O','U','a','e','i','o','u'];
+
+    for (letter of word) {
+        if(vowels.includes(letter)) vowelCount++;
+    }
+    return vowelCount;
+
+}
+
+console.log(countVowels_("Hello"));
+console.log(countVowels("Hello World"));
+console.log(countVowels("JavaScript is fun"));
+console.log(countVowels(""));
 /**
  * Reverse String Words   
  * Write a function named as reverseStringWords() which takes a string as an argument 
@@ -310,6 +685,38 @@ console.log(hasVowel("JavaScript"));
  * reverseStringWords(" ") -> ""  
 */
 
+
+function reverseStringWords(string) {
+    const words = string.split(" ");
+  
+    for (let i = 0; i < words.length; i++) {
+      words[i] = words[i].split("").reverse().join("");
+    }
+  
+    const reversedString = words.join(" ");
+  
+    return reversedString;
+  }
+  
+  const reverseStringWords_ = (str) => {
+
+    const words = str.split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].split("").reverse().join("");
+    }
+
+    const reversedString = words.join(" ");
+
+    return reversedString;
+  }
+
+console.log(reverseStringWords_("Hello World"));
+console.log(reverseStringWords("I like JavaScript"));
+console.log(reverseStringWords("Hello"));
+console.log(reverseStringWords(" "));
+console.log(reverseStringWords(""));
+
 /**
  * Count Consonants
  * Write a function named as countConsonants() which takes a string word as an argument and returns the count of the consonant letters when invoked.   
@@ -320,6 +727,30 @@ console.log(hasVowel("JavaScript"));
  * countConsonants("JavaScript is fun") -> 12
  * countConsonants("") -> 0
 */
+
+function countConsonants_(string) {
+    let countC = 0;
+    for (let letters of string) {
+        if (!"aeouiAEOUI".includes(letters)) countC++;
+    }
+    return countC;
+}
+
+const countConsonants = (str) => {
+
+    let countC = 0;
+
+    for (let letters of str) {
+        if (!"aeouiAEOUI".includes(letters)) countC++;
+    }
+    return countC;
+}
+
+
+console.log(countConsonants("Hello"));
+console.log(countConsonants("Hello World"));
+console.log(countConsonants("JavaScript is fun"));
+console.log(countConsonants(""));
 
 /**
  * Count Multiple Words  
@@ -332,6 +763,29 @@ console.log(hasVowel("JavaScript"));
  * countMultipleWords([ "f o o", "b a r", "foo bar", " foo bar " ]) -> 4
  * countMultipleWords([ ]) -> 0
 */
+
+
+const countMultipleWords = (array) => {
+    let count = 0;
+
+    for (const element of array) {
+
+        const trimmedElement = element.trim();
+
+        if (trimmedElement.split(" ").length > 1) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+const countMultipleWords_ = (arr) => arr.reduce((count, str) => str.trim().includes(" ")? count + 1 : count, 0)
+
+console.log(countMultipleWords(["foo", "", "    ", "foo bar", "     foo"]));
+console.log(countMultipleWords(["foo", "bar", "foobar", "     foobar   "]));
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", "     foo bar   "]));
+console.log(countMultipleWords([]));
 
 /**
  * FizzBuzz
@@ -351,6 +805,30 @@ console.log(hasVowel("JavaScript"));
  * fizzBuzz(9, 6) -> "Fizz | 7 | 8 | Fizz"  
 */
 
+const fizzBuzz = (x, y) => {
+    let newX = Math.min(x,y)
+    let newY = Math.max(x,y)
+
+    let result = "";
+
+    for (let i = newX; i <= newY; i++){
+        if(i % 15 === 0) result += 'FizzBuzz';
+        else if (i % 5 === 0) result += 'Buzz';
+        else if (i % 3 === 0) result +='Fizz';
+        else result += i;
+        if (i !== newY) {
+            result += ' | ';
+        }
+    };
+    
+    return result
+}
+console.log(fizzBuzz(13,18));
+console.log(fizzBuzz(12,5));
+console.log(fizzBuzz(5,5));
+console.log(fizzBuzz(9,6));
+
+
 /**
  * Palindrome
  * Write a function named as isPalindrome() which takes a string word as an argument 
@@ -369,6 +847,15 @@ console.log(hasVowel("JavaScript"));
  * isPalindrome("") -> true
 */
 
+const isPalindrome = (str) => str.toLowerCase() === str.toLowerCase().split('').reverse().join('');
+console.log(isPalindrome("Hello"))//false
+console.log(isPalindrome("Kayak"))//true
+console.log(isPalindrome("civic"))//true
+console.log(isPalindrome("abba"))//true
+console.log(isPalindrome("ab  a"))//false
+console.log(isPalindrome("A"))//true
+console.log(isPalindrome(""))//true
+
 /**
  * Prime Number
  * Write a function named as isPrime() which takes a number as an argument 
@@ -386,6 +873,23 @@ console.log(hasVowel("JavaScript"));
  * isPrime(1) -> false  
 */
 
+const isPrime = (num) => {
+    if (num <= 1) return false;
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+
+console.log(isPrime(5));
+console.log(isPrime(2));
+console.log(isPrime(29));
+console.log(isPrime(-5));
+console.log(isPrime(0));
+console.log(isPrime(1));
+
+
 /**
  * Add Two Arrays
  * Write a function named add() which takes two array of numbers as argument and returns a new array with sum of given arrays elements.
@@ -396,6 +900,14 @@ console.log(hasVowel("JavaScript"));
  * add([-5, 6, -3, 11], [5, -6, 3, -11]) -> [0, 0, 0, 0]  
 */
 
+const add = (arr1, arr2) => {
+    if(arr2.length > arr1.length) [arr1, arr2] = [arr2, arr1]
+    return arr1.map((value, i) => value + (arr2[i] || 0))
+}
+console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2]));  // [9, 3, 2, 7, 5, 10]
+console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34]));  // [16, 11, 9, 3, 2, 7, 5, 10, 34]
+console.log(add([-5, 6, -3, 11], [5, -6, 3, -11]));  // [0, 0, 0, 0]
+
 /**
  * No Elements With A
  * Write a function named noA() which takes an array of strings as argument and will return a new array with all elements starting with "A" or "a" replaced with "###".
@@ -405,6 +917,10 @@ console.log(hasVowel("JavaScript"));
  * noA(["apple", "abc", "ABC", "Alex", "A"]) -> ["###", "###", "###", "###", "###"]
  */
 
+const noA =(arr) => arr.map(x => x.toLowerCase()[0]=== 'a' ? '###' : x);
+console.log(noA(["javascript", "hello", "123", "xyz"]));
+console.log(noA(["apple", "123", "ABC", "javascript"]));
+console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));
 /**
  * No Elements Divisible By 3 and 5
 * Write a function named no3and5() which takes an array of integer numbers as argument and will return a new array with elements replaced by conditions below.
@@ -417,6 +933,19 @@ console.log(hasVowel("JavaScript"));
 * no3and5([10, 11, 12, 13, 14, 15])     -> [99, 11, 100, 13, 14, 101]
  */
 
+const no3Or5 = (arr) => {
+    return arr.map(num => {
+      if(num % 15 === 0) return 101;
+      else if(num % 5 === 0) return 99;
+      else if(num % 3 === 0) return 100;
+      return num;
+    })
+  }
+  
+  console.log(no3Or5([7, 4, 11, 23, 17]))
+  console.log(no3Or5([3, 4, 5, 6]))
+  console.log(no3Or5([10, 11, 12, 13, 14, 15]))
+
 /**
  * No Elements Equals 13
 * Write a function named no13() which takes an array of numbers as argument and return a new array with all 13s replaced with 0s.
@@ -426,6 +955,11 @@ console.log(hasVowel("JavaScript"));
 * no13([13, 13, 13 , 13, 13])   -> [0, 0, 0, 0, 0] 
 * no13([])                      -> []
  */
+const no13 = (nums) => {return nums.map(num => num === 13 ? 0 : num);}
+console.log([1,2,3,4]);
+console.log(no13([13,13,13,13,13]));
+console.log([13,2,3]);
+console.log([]);
 
 
 /**
@@ -438,7 +972,18 @@ console.log(hasVowel("JavaScript"));
  * removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])  -> ["abc", "xyz", "123", "ab", "ABC"]
  * removeDuplicates(["1", "2", "3", "2", "3"])                  -> ["1", "2", "3"]
  */
+const removeDuplicates = (arr) => {
+    return arr.filter((value, index) => {
+        return arr.indexOf(value) === index;
+    });
+}
 
+
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
+console.log(removeDuplicates([1, 2, 5, 2, 3]));
+console.log(removeDuplicates([0, -1, -2, -2, -1]));
+console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+console.log(removeDuplicates(["1", "2", "3", "2", "3"]));
 
 /**
  * No Digits
@@ -451,6 +996,13 @@ console.log(hasVowel("JavaScript"));
  * noDigit("123Tech456Global149")               -> "TechGlobal"
  */
 
+const noDigit = (str) => str.split('').filter(i => i < '0' || i> '9').join('');
+
+console.log(noDigit(""))
+console.log(noDigit("Javascript"))
+console.log(noDigit("123Hello"))
+console.log(noDigit("123Hello World149"))
+console.log(noDigit("123Tech456Global149"))
 
 /**
  * No Vowel
@@ -462,6 +1014,14 @@ console.log(hasVowel("JavaScript"));
  * noVowel("")                  -> ""
  * noVowel("125$")              -> "125$"
  */
+const noVowel = (str) => str.split('').filter(i => !('aeiou'.includes(i.toLowerCase()))).join('');
+
+
+console.log(noVowel("TechGlobal"))
+console.log(noVowel("AEOxyz"))
+console.log(noVowel("Javascript"))
+console.log(noVowel(""))
+console.log(noVowel("125$"))
 
 
 /**
@@ -474,6 +1034,7 @@ console.log(hasVowel("JavaScript"));
  * sumOfDigits("")                      -> 0
  */
 
+const sumOfDigits = (str) => str.split('').filter( i => i>= '0' && i <= '9').reduce((sum,num) => sum += Number(num), 0)
 
 /**
  * Array Factorial
@@ -485,3 +1046,33 @@ console.log(hasVowel("JavaScript"));
  * arrFactorial([5,0,6])        -> [120, 1, 720]
  * arrFactorial([])             -> []
  */ 
+
+const arrFactorial = (arr) => {
+    let factorials = [];
+    
+    for (let num of arr) {
+      let factorial = 1;
+      for (let i = 2; i <= num; i++) {
+        factorial *= i;
+      }
+      factorials.push(factorial);
+    }
+  
+    return factorials;
+  }
+
+  const arrFactorial_ = (arr) =>{
+    return arr.map(num => {
+        let fac = 1;
+        for(let i = 2; i <= num; i++){
+            fac *= i;
+        }
+        return fac;
+    })
+    
+}
+
+console.log(arrFactorial([1, 2, 3, 4])); 
+console.log(arrFactorial([0, 5]));       
+console.log(arrFactorial([5, 0, 6]));    
+console.log(arrFactorial([]));

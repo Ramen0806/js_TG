@@ -108,7 +108,8 @@ Write a function named countWords() which takes a string argument and returns th
 NOTE: Be careful about the extra whitespaces before and after the string.
 Examples:
 countWords("     Javascript is fun       ") 		-> 3
-countWords("Cypress is an UI automation tool.    ") 	-> 6 countWords("1 2 3 4") 				-> 4
+countWords("Cypress is an UI automation tool.    ") 	-> 6 
+countWords("1 2 3 4") 				-> 4
 
 */
 
@@ -123,8 +124,9 @@ function countWords(string) {
     return wordCount;
 }
 
+const countWords_ = (str) => str.trim().split(' ').length
 
-console.log(countWords("     Javascript is fun     "));
+console.log(countWords_("     Javascript is fun     "));
 console.log(countWords("Cypress is an UI automation tool.    "));
 console.log(countWords("1 2 3 4"));
 
@@ -382,7 +384,7 @@ findClosestTo10([0, -1, -2]) 		-> 0
 
 */
 
-function findClosestTo10(arr) {
+function findClosestTo10_(arr) {
     let closest = Infinity;
     for (let i = 0; i < arr.length; i++) {
         const diff = Math.abs(arr[i] - 10);
@@ -397,6 +399,26 @@ function findClosestTo10(arr) {
     }
     return closest;
 }
+
+
+const findClosestTo10 = (arr) =>{
+    let closestTo10 = Number.MAX_VALUE
+    let closestDiff = Number.MAX_VALUE
+
+    for(currentNum of arr){
+        if(currentNum === 10) continue;
+
+        let currentDiff = Math.abs(10 - currentNum);
+
+        if(currentDiff < closestDiff || ((currentDiff === closestDiff) && currentNum < closestTo10)){
+            closestTo10 = currentNum;
+            closestDiff = currentDiff;
+        }
+    }
+    return closestTo10;
+}
+
+
 
 console.log(findClosestTo10([10, 10, -13, 5, 70, 15, 57]));
 console.log(findClosestTo10([10, -13, 8, 15, -20]));
