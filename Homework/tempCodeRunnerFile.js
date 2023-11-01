@@ -1,16 +1,20 @@
-function countWords(string) {
-    const trimmedString = string.trim();
-    const wordsArray = trimmedString.split(" ");
-    let wordCount = 0;
-
-    for (const word of wordsArray) {
-        if (word !== '') wordCount++;
+const splitString = (str, num) => {
+    if (str.length < num) return ""
+    result = "";
+    for(i = 0; i < num; i++){
+        result += str[i];
     }
-    return wordCount;
+    result += " "
+    for(i = num; i < str.length; i++){
+        result += str[i];
+    }
+    return result;
 }
 
-const countWords_ = (str) => str.trim().split(' ').length
 
-console.log(countWords_("     Javascript is fun     "));
-console.log(countWords("Cypress is an UI automation tool.    "));
-console.log(countWords("1 2 3 4"));
+console.log(splitString("Google",2));
+console.log(splitString("JavaScript", 5));
+console.log(splitString("Java", 2));
+console.log(splitString("Automation", 3));
+console.log(splitString("Hello", 6));
+console.log(splitString("12", 1));
