@@ -1,20 +1,18 @@
-const splitString = (str, num) => {
-    if (str.length < num) return ""
-    result = "";
-    for(i = 0; i < num; i++){
-        result += str[i];
-    }
-    result += " "
-    for(i = num; i < str.length; i++){
-        result += str[i];
-    }
-    return result;
+
+const countOccurrence = (str1, str2) => {
+  let duplicated = ""
+  for (let i = 0; i < str1.length; i++) {
+      if(str2.toLowerCase().includes(str1[i].toLowerCase())) {
+      duplicated +=str1[i]
+      }
+  }
+  if(duplicated.length >= str2.length)
+   return Math.floor(duplicated.length / str2.length)
+  else return 0
 }
 
-
-console.log(splitString("Google",2));
-console.log(splitString("JavaScript", 5));
-console.log(splitString("Java", 2));
-console.log(splitString("Automation", 3));
-console.log(splitString("Hello", 6));
-console.log(splitString("12", 1));
+console.log(countOccurrence("Javascript", "Java")) 
+console.log(countOccurrence("Hello", "World"))   
+console.log(countOccurrence("Can I can a can", "anc")) 
+console.log(countOccurrence("Hello", "l")) 
+console.log(countOccurrence("IT conversations", "IT")) 
