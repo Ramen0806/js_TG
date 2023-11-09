@@ -26,6 +26,7 @@ const countPalindrome = (str) =>{
     if (word !== '' && word === reversedWord ) {
       palindromes++;
     }}
+
 return palindromes;
 }
 
@@ -329,3 +330,6 @@ console.log(countOccurrence("Hello", "World"))
 console.log(countOccurrence("Can I can a can", "anc")) 
 console.log(countOccurrence("Hello", "l")) 
 console.log(countOccurrence("IT conversations", "IT")) 
+
+
+
