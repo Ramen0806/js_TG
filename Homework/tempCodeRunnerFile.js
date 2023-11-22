@@ -1,23 +1,34 @@
 
-const findLongestWord = (str) => {
-    if (!str || str.trim().length === 0) {
-        return '';
+function romanToInt(roman) {
+    const romans = {
+      I: 1,
+      V: 5,
+      X: 10, 
+      L: 50,
+      C: 100,
+      D: 500,
+      M: 1000
+    };
+    
+    let total = 0;
+    let prev = 0;
+    
+    for(let i = roman.length - 1; i >= 0; i--) {
+      let num = romans[roman[i]];
+      if(num < prev) {
+        total -= num;
+      } else {
+        total += num;
       }
+      prev = num;
+    }
     
-      const words = str.split(' '); 
-      let longest = words[0];
-    
-      for (let i = 1; i < words.length; i++) {
-        if (words[i].length > longest.length) {
-          longest = words[i];
-        }
-      }
-    
-      return longest;
-}
+    return total;
+  }
 
-console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
-console.log(findLongestWord("This is a sample string for testing"));
-console.log(findLongestWord("One two ten"));
-console.log(findLongestWord(""));
-console.log(findLongestWord("      "));
+console.log(romanToInt("I")); // 1
+console.log(romanToInt("IV")); // 4 
+console.log(romanToInt("CXII")); // 112
+console.log(romanToInt("MMM")); // 3000  
+console.log(romanToInt("MMMDCCCLXXXVIII")); // 3888
+console.log(romanToInt("MDCLXVI")); // 1666

@@ -123,7 +123,7 @@ findLongestWord("The quick brown fox jumped over the lazy dog") 	-> "jumped"
 findLongestWord("This is a sample string for testing") 		->"testing" 
 findLongestWord("One two ten") 				-> "One"
 findLongestWord("") 					-> ""
-findLongestWord("      ") 					-> ""
+findLongestWord(    "  ") 					-> ""
  */
 
 const findLongestWord = (str) => {
