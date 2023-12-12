@@ -359,7 +359,7 @@ removeExtraSpaces("") 			-> ""
 
 function removeExtraSpaces(string) {
 
-    return string.split(' ').filter(x => x.length >= 1).join(' ');
+    return string.split(' ').filter(x => x.length > 1).join(' ');
 }
 
 console.log(removeExtraSpaces("Hello"));

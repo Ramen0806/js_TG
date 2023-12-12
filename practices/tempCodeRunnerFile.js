@@ -1,8 +1,16 @@
-const noVowel = (str) => str.split('').filter(i => !('aeiou'.includes(i.toLowerCase()))).join('');
 
+  const arrFactorial = (arr) =>{
+    return arr.map(num => {
+        let fac = 1;
+        for(let i = 2; i <= num; i++){
+            fac *= i;
+        }
+        return fac;
+    })
+    
+}
 
-console.log(noVowel("TechGlobal"))
-console.log(noVowel("AEOxyz"))
-console.log(noVowel("Javascript"))
-console.log(noVowel(""))
-console.log(noVowel("125$"))
+console.log(arrFactorial([1, 2, 3, 4])); 
+console.log(arrFactorial([0, 5]));       
+console.log(arrFactorial([5, 0, 6]));    
+console.log(arrFactorial([]));

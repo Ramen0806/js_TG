@@ -1047,7 +1047,7 @@ const sumOfDigits = (str) => str.split('').filter( i => i>= '0' && i <= '9').red
  * arrFactorial([])             -> []
  */ 
 
-const arrFactorial = (arr) => {
+const arrFactorial_ = (arr) => {
     let factorials = [];
     
     for (let num of arr) {
@@ -1061,7 +1061,7 @@ const arrFactorial = (arr) => {
     return factorials;
   }
 
-  const arrFactorial_ = (arr) =>{
+  const arrFactorial = (arr) =>{
     return arr.map(num => {
         let fac = 1;
         for(let i = 2; i <= num; i++){
