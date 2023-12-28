@@ -87,12 +87,12 @@ const calculateGCD_ = (num1 , num2) =>{
       
         return gcd;
       }
-console.log(calculateGCD(8, 12));
-console.log(calculateGCD(17, 5));
-console.log(calculateGCD(48, 18));
-console.log(calculateGCD(0, 5));
-console.log(calculateGCD(21, 14));
-console.log(calculateGCD(60, 48));
+console.log(calculateGCD_(8, 12));
+console.log(calculateGCD_(17, 5));
+console.log(calculateGCD_(48, 18));
+console.log(calculateGCD_(0, 5));
+console.log(calculateGCD_(21, 14));
+console.log(calculateGCD_(60, 48));
 
 
 
