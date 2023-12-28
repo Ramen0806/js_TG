@@ -14,12 +14,12 @@ findMedian([0], [0,1])  		​-> 0
 
 const findMedian = (arr1, arr2) => {
     const mergedArray = [...arr1,...arr2].sort((a,b) => a - b);
-    const middle = Math.floor(mergedArray.length/2);
+    const middleIn = Math.floor(mergedArray.length/2);
 
     if (mergedArray.length % 2 === 0) {
-        return (mergedArray[middle - 1] + mergedArray[middle]) / 2; 
+        return (mergedArray[middleIn - 1] + mergedArray[middleIn]) / 2; 
       } else {
-        return mergedArray[middle];
+        return mergedArray[middleIn];
       }
 }
 
