@@ -71,7 +71,7 @@ The sum of the numbers = 60
 
 */
 
-let num1 = 25 , num2 = 35;
+let num1 = 25 , let num2 = 35;
 
 console.log("The sum of the numbers = " + (num1 + num2));
 /*Task5:
